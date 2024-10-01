@@ -1,0 +1,23 @@
+[project]
+name = "f1l3"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "null crafter", email = "163591881+null-crafter@users.noreply.github.com" }
+]
+dependencies = [
+    "django==4.2.*",
+    "django-stubs==4.2.*",
+    "djangorestframework>=3.15.2",
+    "gunicorn[gevent]>=23.0.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = [
+    "black>=24.8.0",
+    "isort>=5.13.2",
+]
