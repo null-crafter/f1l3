@@ -26,6 +26,7 @@ greenlet==3.1.1
 gunicorn==23.0.0
 packaging==24.1
     # via gunicorn
+python-dotenv==1.0.1
 setuptools==75.1.0
     # via zope-event
     # via zope-interface
