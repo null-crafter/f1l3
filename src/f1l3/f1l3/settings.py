@@ -9,12 +9,14 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+
 from dotenv import load_dotenv
 
 load_dotenv()
 
-from pathlib import Path
 import os
+from pathlib import Path
+
 EXAMPLE_HOST = "f1l3.example.com"
 HOST = os.environ.get("HOST", EXAMPLE_HOST)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

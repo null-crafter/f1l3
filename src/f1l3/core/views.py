@@ -1,3 +1,6 @@
+import typing as t
+
+from django.conf import settings
 from django.http import FileResponse
 from django.shortcuts import render
 from rest_framework.decorators import api_view
@@ -6,13 +9,13 @@ from rest_framework.response import Response
 
 from core.models import UploadedFile
 from core.serializers import UploadedFileSerializer
-from django.conf import settings
-import typing as t
+
 
 def get_base_url() -> t.Optional[str]:
     if settings.HOST == settings.EXAMPLE_HOST:
         return None
     return f"https://{settings.HOST}/"
+
 
 def home(request):
     base_url = get_base_url() or f"https://{settings.EXAMPLE_HOST}/"
