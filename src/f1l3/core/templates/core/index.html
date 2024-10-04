@@ -9,10 +9,22 @@
             font-size: 1.25em;
             margin-left: 3vw;
         }
+        #curl-command{
+            font-size: 1.25em;
+            overflow: auto;
+            margin-left: 4vw;
+        }
     </style>
 </head>
 <body>
     <h3>F1L3 File Hosting</h3>
+    <h5>Upload your file with <code>curl</code>:</h5>
+    <p>
+    <code id="curl-command">
+            curl -F file=@yourfile.png https://f1l3.example.com/upload/
+    </code>
+    </p>
+    <h5>or use the form below:</h5>
     <form id="upload-form" action="/upload-html/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="file" name="file" id="field-file"><br>
