@@ -7,7 +7,11 @@
 </head>
 <body>
     <p id="uploaded-file">
-        <a href="/download/{{ alias }}">{{ filename }}</a> is uploaded!
+        {% if base_url %}
+            uploaded: <a href="{{ base_url }}download/{{ alias }}">{{ base_url }}download/{{ alias }}</a>
+        {% else %}
+            <a href="/download/{{ alias }}">{{ filename }}</a> is uploaded!
+        {% endif %}
     </p>
 </body>
 </html>
