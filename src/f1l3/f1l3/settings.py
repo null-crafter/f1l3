@@ -30,7 +30,7 @@ if os.path.exists(DATA_DIR) is False:
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-8437^(c4mb^@)7iou42h+hqmrcqb_t+((31tx9y^jrddc$lpqp"
+SECRET_KEY = os.environ.get("SECRET_KEY", "NO-SECRET-KEY!!!")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") != "False"
