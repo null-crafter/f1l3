@@ -1,10 +1,13 @@
-import uuid
 import os
+import uuid
+
+from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
 from core.utils import generate_random_sequence
-from django.conf import settings
+
 
 def random_filename(_, filename: str) -> str:
     if not filename:
@@ -13,12 +16,15 @@ def random_filename(_, filename: str) -> str:
     ext = ext or ".bin"
     return str(uuid.uuid4()) + ext
 
+
 class UploadedFile(models.Model):
     file = models.FileField(upload_to=random_filename)
     alias = models.TextField(null=True, blank=True, unique=True)
+
     def remove(self):
         self.file.delete()
         self.delete()
+
 
 @receiver(post_save, sender=UploadedFile)
 def update_alias(sender, instance, **kwargs):

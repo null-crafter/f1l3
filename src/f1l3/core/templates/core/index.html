@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1L3</title>
+    <style>
+        #upload-form {
+            font-size: 1.25em;
+            margin-left: 3vw;
+        }
+    </style>
+</head>
+<body>
+    <h3>F1L3 File Hosting</h3>
+    <form id="upload-form" action="/upload-html/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" id="field-file"><br>
+        <button type="submit" id="btn-submit">upload</button>
+    </form> 
+</body>
+</html>
